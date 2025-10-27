@@ -5,7 +5,7 @@ document.addEventListener("keypress", function (event) {
 
   if (key >= "a" && key <= "z") {
     if (document.activeElement === keylogger) {
-      keylogger.value += key + key;
+      keylogger.value += key;
     } else {
       keylogger.value += key;
     }
