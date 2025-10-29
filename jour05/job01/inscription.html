@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preload" href="validation.js" as="script" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="noindex" />
+    <meta name="color-scheme" content="light" />
+    <meta name="referrer" content="no-referrer" />
+  </head>
+  <body>
+    <main>
+      <h1>Inscription</h1>
+      <p class="helper">
+        Tous les champs sont vérifiés de façon asynchrone pendant la saisie.
+      </p>
+
+      <form id="form-signup" novalidate>
+        <div class="field">
+          <label for="nom">Nom</label>
+          <input
+            id="nom"
+            name="nom"
+            type="text"
+            autocomplete="family-name"
+            required
+            aria-describedby="nom-error"
+          />
+          <div id="nom-error" class="error" data-error-for="nom"></div>
+        </div>
+
+        <div class="field">
+          <label for="prenom">Prénom</label>
+          <input
+            id="prenom"
+            name="prenom"
+            type="text"
+            autocomplete="given-name"
+            required
+            aria-describedby="prenom-error"
+          />
+          <div id="prenom-error" class="error" data-error-for="prenom"></div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            aria-describedby="email-error"
+          />
+          <div id="email-error" class="error" data-error-for="email"></div>
+        </div>
+
+        <div class="field">
+          <label for="password">Mot de passe</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="new-password"
+            required
+            aria-describedby="password-error"
+          />
+          <div
+            id="password-error"
+            class="error"
+            data-error-for="password"
+          ></div>
+        </div>
+
+        <div class="field">
+          <label for="adresse">Adresse</label>
+          <input
+            id="adresse"
+            name="adresse"
+            type="text"
+            autocomplete="street-address"
+            required
+            aria-describedby="adresse-error"
+          />
+          <div id="adresse-error" class="error" data-error-for="adresse"></div>
+        </div>
+
+        <div class="field">
+          <label for="codepostal">Code postal</label>
+          <input
+            id="codepostal"
+            name="codepostal"
+            type="text"
+            inputmode="numeric"
+            pattern="\d{5}"
+            required
+            aria-describedby="codepostal-error"
+          />
+          <div
+            id="codepostal-error"
+            class="error"
+            data-error-for="codepostal"
+          ></div>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Créer le compte</button>
+          <span class="small"
+            >Déjà inscrit ?
+            <a href="/runtrack3/jour05/job01/connexion.html"
+              >Se connecter</a
+            ></span
+          >
+        </div>
+        <div class="success" data-form-msg></div>
+      </form>
+
+      <p class="notice small">
+        Bonnes pratiques (front) : validations HTML5 + JS, messages d’erreurs
+        clairs, et toujours revalider côté serveur.
+      </p>
+      <p class="small">
+        <a href="/runtrack3/jour05/job01/index.html">← Retour à l’accueil</a>
+      </p>
+    </main>
+
+    <script src="validation.js"></script>
+    <script>
+      const form = document.getElementById("form-signup");
+      if (typeof attachAsyncValidation === "function") {
+        attachAsyncValidation(form, { email: { checkDuplicate: true } });
+      }
+    </script>
+  </body>
+</html>

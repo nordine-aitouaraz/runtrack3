@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preload" href="validation.js" as="script" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="noindex" />
+    <meta name="color-scheme" content="light" />
+    <meta name="referrer" content="no-referrer" />
+  </head>
+  <body>
+    <main>
+      <h1>Connexion</h1>
+      <p class="helper">
+        Saisissez votre email et votre mot de passe. Les champs sont vérifiés de
+        manière asynchrone.
+      </p>
+
+      <form id="form-login" novalidate>
+        <div class="field">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            aria-describedby="email-error"
+          />
+          <div id="email-error" class="error" data-error-for="email"></div>
+        </div>
+
+        <div class="field">
+          <label for="password">Mot de passe</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+            aria-describedby="password-error"
+          />
+          <div
+            id="password-error"
+            class="error"
+            data-error-for="password"
+          ></div>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Se connecter</button>
+          <span class="small"
+            >Pas de compte ?
+            <a href="/runtrack3/jour05/job01/inscription.html"
+              >Créer un compte</a
+            ></span
+          >
+        </div>
+        <div class="success" data-form-msg></div>
+      </form>
+
+      <p class="notice small">
+        Astuce : cette démo valide côté client, mais votre serveur doit toujours
+        revalider et sécuriser.
+      </p>
+      <p class="small">
+        <a href="/runtrack3/jour05/job01/index.html">← Retour à l’accueil</a>
+      </p>
+    </main>
+
+    <script src="validation.js"></script>
+    <script>
+      const form = document.getElementById("form-login");
+      if (typeof attachAsyncValidation === "function") {
+        attachAsyncValidation(form, { email: { checkDuplicate: false } });
+      }
+    </script>
+  </body>
+</html>

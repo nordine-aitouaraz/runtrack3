@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jour 05 • Job 01</title>
+    <style>
+      :root {
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --fg: #0f172a;
+        --muted: #64748b;
+        --brand: #2563eb;
+        --border: #e5e7eb;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+          Arial;
+      }
+      header {
+        background: #0b1220;
+        color: #fff;
+      }
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+      }
+      .nav a.logo {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 800;
+        letter-spacing: 0.3px;
+      }
+      .nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 16px;
+      }
+      .nav a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .nav a:hover {
+        color: #fff;
+      }
+      main {
+        padding: 28px 0;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 18px;
+      }
+      h1 {
+        font-size: 1.6rem;
+        margin: 0 0 8px;
+      }
+      p.lead {
+        margin: 0 0 18px;
+        color: var(--muted);
+      }
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 1.15rem;
+      }
+      .card p {
+        margin: 0 0 12px;
+        color: var(--muted);
+      }
+      .btn {
+        display: inline-block;
+        background: var(--brand);
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 700;
+        border: 1px solid #1d4ed8;
+      }
+      .btn:hover {
+        background: #1d4ed8;
+      }
+      footer {
+        padding: 22px 0;
+        color: #94a3b8;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="logo" href="/runtrack3/jour05/job01/index.html"
+          >Jour 05 • Job 01</a
+        >
+        <ul>
+          <li><a href="/runtrack3/jour05/job01/index.html">Accueil</a></li>
+          <li>
+            <a href="/runtrack3/jour05/job01/inscription.html">Inscription</a>
+          </li>
+          <li>
+            <a href="/runtrack3/jour05/job01/connexion.html">Connexion</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <h1>Formulaires avec validations asynchrones</h1>
+        <p class="lead">
+          Choisissez une page pour commencer : inscription (création de compte)
+          ou connexion.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h2>Inscription</h2>
+            <p>
+              Créez un compte. Les champs sont contrôlés pendant la saisie
+              (email, mot de passe, etc.).
+            </p>
+            <a class="btn" href="/runtrack3/jour05/job01/inscription.html"
+              >Aller à l’inscription</a
+            >
+          </article>
+          <article class="card">
+            <h2>Connexion</h2>
+            <p>
+              Accédez à votre compte avec votre email et votre mot de passe.
+            </p>
+            <a class="btn" href="/runtrack3/jour05/job01/connexion.html"
+              >Aller à la connexion</a
+            >
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">© Jour 05 • Job 01</div>
+    </footer>
+  </body>
+</html>
